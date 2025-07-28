@@ -74,6 +74,9 @@ function Home() {
 
             {/* Opiniones */}
             <div className="bg-gray-100 py-8 px-4 md:px-12">
+                <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">
+                    <FormattedMessage id="opiniones.titulo" defaultMessage="Testimonios" />
+                </h2>
                 <Opiniones
                     texto={<FormattedMessage id="opiniones.virginia.texto" />}
                     nombre={<FormattedMessage id="opiniones.virginia.nombre" />}
