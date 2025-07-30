@@ -33,7 +33,7 @@ function Navbar() {
                     {/* Menú de navegación (colapsable en móviles, visible en lg) */}
                     <div className={`mt-4 lg:mt-0 ${menuAbierto ? 'block' : 'hidden'} lg:flex lg:items-center lg:gap-6`}>
                         <div className="flex flex-col lg:flex-row items-center gap-4 text-xl text-red-900 relative -top-4">
-                            <Link to="/Home" onClick={cerrarMenu}>
+                            <Link to="/home" onClick={cerrarMenu}>
                                 <FormattedMessage id="navbar.home" defaultMessage="Inicio" />
                             </Link>
                             <Link to="/rebirthing" onClick={cerrarMenu}>

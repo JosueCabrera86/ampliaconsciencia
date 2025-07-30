@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
-import Home from '.pages/home';
-import Contacto from '.pages/contacto'
+import Home from './pages/home';
+import Contacto from './pages/contacto'
 import Rebirthing from './pages/rebirthing';
 import BiografiaHumana from './pages/biografia';
 
