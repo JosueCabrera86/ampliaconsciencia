@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import emailjs from '@emailjs/browser';
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Contacto() {
     const [formData, setFormData] = useState({
@@ -12,11 +13,18 @@ function Contacto() {
 
     const [errors, setErrors] = useState({});
 
+    // Estado para reCAPTCHA
+    const [captchaValue, setCaptchaValue] = useState(null);
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         });
+    };
+
+    const handleCaptchaChange = (value) => {
+        setCaptchaValue(value);
     };
 
     const validateForm = () => {
@@ -25,6 +33,7 @@ function Contacto() {
         if (!formData.email.trim()) newErrors.email = 'El correo es obligatorio';
         if (!formData.asunto.trim()) newErrors.asunto = 'El asunto es obligatorio';
         if (!formData.mensaje.trim()) newErrors.mensaje = 'El mensaje es obligatorio';
+        if (!captchaValue) newErrors.captcha = 'Por favor verifica el CAPTCHA';
         return newErrors;
     };
 
@@ -47,7 +56,7 @@ function Contacto() {
             from_name: formData.nombre,
             from_email: formData.email,
             subject: formData.asunto,
-            message: formData.mensaje
+            message: formData.mensaje,
         };
 
         emailjs.send(serviceID, templateID, templateParams, publicKey)
@@ -59,7 +68,7 @@ function Contacto() {
                     asunto: '',
                     mensaje: ''
                 });
-                window.location.reload();
+                setCaptchaValue(null); // Reiniciar captcha para que usuario pueda enviar otro mensaje
             })
             .catch((error) => {
                 console.error('Error al enviar mensaje:', error);
@@ -81,7 +90,6 @@ function Contacto() {
 
             <div className="container mx-auto px-4 mt-8">
                 <div className="flex flex-col md:flex-row gap-8">
-                    {/* Texto explicativo */}
                     <div className="md:w-1/2 text-center md:text-center text-xl text-black">
                         <h1 className="text-2xl font-bold mb-4">
                             <FormattedMessage id="contacto" defaultMessage="Contacto" />
@@ -94,7 +102,6 @@ function Contacto() {
                         </p>
                     </div>
 
-                    {/* Formulario */}
                     <form
                         onSubmit={handleSubmit}
                         className="md:w-1/2 flex flex-col space-y-4 text-base text-black max-w-xl mx-auto md:mx-0"
@@ -146,6 +153,13 @@ function Contacto() {
                             />
                             {errors.mensaje && <span className="text-red-600 text-sm">{errors.mensaje}</span>}
                         </label>
+
+                        {/* Aquí el ReCAPTCHA */}
+                        <ReCAPTCHA
+                            sitekey="6Lf245QrAAAAADhiIu2wIyBFnKViRge7dPeQ2NDa"
+                            onChange={handleCaptchaChange}
+                        />
+                        {errors.captcha && <span className="text-red-600 text-sm">{errors.captcha}</span>}
 
                         <button
                             type="submit"
