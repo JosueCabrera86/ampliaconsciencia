@@ -156,7 +156,7 @@ function Contacto() {
 
                         {/* Aquí el ReCAPTCHA */}
                         <ReCAPTCHA
-                            sitekey="6Lf245QrAAAAADhiIu2wIyBFnKViRge7dPeQ2NDa"
+                            sitekey="6Lca5ZQrAAAAAI63J0sre5hJNXYQ5jrOMHE92n_1"
                             onChange={handleCaptchaChange}
                         />
                         {errors.captcha && <span className="text-red-600 text-sm">{errors.captcha}</span>}
