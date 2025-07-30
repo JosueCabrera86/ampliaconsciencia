@@ -41,9 +41,8 @@ function Home() {
             <motion.div
                 className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 px-4 md:px-0 py-12"
                 initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                viewport={{ once: true, amount: 0.5 }}
             >
                 <Link to="/rebirthing" className="flex flex-col items-center group cursor-pointer">
                     <div className="w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300">
