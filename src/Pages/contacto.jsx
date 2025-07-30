@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
+import emailjs from '@emailjs/browser';
 
 function Contacto() {
     const [formData, setFormData] = useState({
@@ -9,6 +10,8 @@ function Contacto() {
         mensaje: ''
     });
 
+    const [errors, setErrors] = useState({});
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -16,20 +19,56 @@ function Contacto() {
         });
     };
 
+    const validateForm = () => {
+        const newErrors = {};
+        if (!formData.nombre.trim()) newErrors.nombre = 'El nombre es obligatorio';
+        if (!formData.email.trim()) newErrors.email = 'El correo es obligatorio';
+        if (!formData.asunto.trim()) newErrors.asunto = 'El asunto es obligatorio';
+        if (!formData.mensaje.trim()) newErrors.mensaje = 'El mensaje es obligatorio';
+        return newErrors;
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Datos del formulario:', formData);
-        setFormData({
-            nombre: '',
-            email: '',
-            asunto: '',
-            mensaje: ''
-        });
+
+        const newErrors = validateForm();
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+
+        setErrors({});
+
+        const serviceID = 'service_pevmvcq';
+        const templateID = 'template_8snys1c';
+        const publicKey = '_iSrpBHpITtiNXgM4';
+
+        const templateParams = {
+            from_name: formData.nombre,
+            from_email: formData.email,
+            subject: formData.asunto,
+            message: formData.mensaje
+        };
+
+        emailjs.send(serviceID, templateID, templateParams, publicKey)
+            .then(() => {
+                alert('Mensaje enviado con éxito.');
+                setFormData({
+                    nombre: '',
+                    email: '',
+                    asunto: '',
+                    mensaje: ''
+                });
+                window.location.reload();
+            })
+            .catch((error) => {
+                console.error('Error al enviar mensaje:', error);
+                alert('Error al enviar el mensaje. Intenta de nuevo.');
+            });
     };
 
     return (
         <div>
-            {/* Portada con proporción fija */}
             <div className="relative -mt-6 w-full">
                 <div className="w-full aspect-[16/9] md:aspect-[21/9]">
                     <img
@@ -67,9 +106,9 @@ function Contacto() {
                                 name="nombre"
                                 value={formData.nombre}
                                 onChange={handleChange}
-                                required
                                 className="border border-red-900 p-2 rounded mt-1"
                             />
+                            {errors.nombre && <span className="text-red-600 text-sm">{errors.nombre}</span>}
                         </label>
 
                         <label className="flex flex-col">
@@ -79,9 +118,9 @@ function Contacto() {
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                required
                                 className="border border-red-900 p-2 rounded mt-1"
                             />
+                            {errors.email && <span className="text-red-600 text-sm">{errors.email}</span>}
                         </label>
 
                         <label className="flex flex-col">
@@ -91,9 +130,9 @@ function Contacto() {
                                 name="asunto"
                                 value={formData.asunto}
                                 onChange={handleChange}
-                                required
                                 className="border border-red-900 p-2 rounded mt-1"
                             />
+                            {errors.asunto && <span className="text-red-600 text-sm">{errors.asunto}</span>}
                         </label>
 
                         <label className="flex flex-col">
@@ -102,10 +141,10 @@ function Contacto() {
                                 name="mensaje"
                                 value={formData.mensaje}
                                 onChange={handleChange}
-                                required
                                 rows={5}
                                 className="border border-red-900 p-2 rounded mt-1 resize-y"
                             />
+                            {errors.mensaje && <span className="text-red-600 text-sm">{errors.mensaje}</span>}
                         </label>
 
                         <button
