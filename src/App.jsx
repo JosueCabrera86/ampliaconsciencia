@@ -16,12 +16,10 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/rebirthing" element={<Rebirthing />} />
         <Route path="/biografia" element={<BiografiaHumana />} />
         <Route path="/contacto" element={<Contacto />} />
-
-
       </Routes>
       <Footer />
     </>
