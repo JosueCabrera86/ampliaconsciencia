@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
-import Home from './pages/home';
+import Home from './pages_temp/home';
 import Contacto from '.pages/contacto'
-import Rebirthing from './pages/rebirthing';
-import BiografiaHumana from './pages/biografia';
+import Rebirthing from './pages_temp/rebirthing';
+import BiografiaHumana from './pages_temp/biografia';
 
 
 function App() {
