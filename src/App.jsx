@@ -4,7 +4,7 @@ import Navbar from './components/navbar';
 import Footer from './components/footer';
 import Home from './Pages/home';
 import Contacto from './Pages/contacto'
-import Rebirthing from './Pages/Rebirthing';
+import Rebirthing from './Pages/rebirthing';
 import BiografiaHumana from './Pages/biografia';
 
 
