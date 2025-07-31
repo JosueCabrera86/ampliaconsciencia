@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
-import ScrollToTop from './scrollToTop';
+import ScrollToTop from './ScrollToTop';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import Home from './pages/home';
