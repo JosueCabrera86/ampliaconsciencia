@@ -8,14 +8,14 @@ function Footer() {
             <div className="flex justify-center mt-6">
 
                 <a
-                    href="https://www.facebook.com/elaireesmedicina"
+                    href="https://www.facebook.com/ampliaconsciencia/"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     <FaFacebook size={30} color="#3b5998" />
                 </a>
                 <a
-                    href="https://www.instagram.com/el.aire.es.medicina/"
+                    href="https://www.instagram.com/diego.diaz.green/"
                     target="_blank"
                     rel="noopener noreferrer"
                 >

@@ -52,5 +52,11 @@
     "biografia.faq4.pregunta": "4. ¿Se puede hacer de manera online?",
     "biografia.faq4.respuesta": "Las sesiones usualmente se hacen de manera online pero también se puede realizar de forma presencial",
     "contacto": "Contacto",
-    "contacto.mensaje": "Estamos aquí para acompañarte.\nSi tienes alguna duda, comentario o necesitas más información acerca de alguna de nuestras actividades, si quieres pedir un turno o quieres dejarnos un testimonio de tu experiencia, no dudes en ponerte en contacto. Tu comentario es muy valioso para nosotros."
+    "contacto.mensaje": "Estamos aquí para acompañarte.\nSi tienes alguna duda, comentario o necesitas más información acerca de alguna de nuestras actividades, si quieres pedir un turno o quieres dejarnos un testimonio de tu experiencia, no dudes en ponerte en contacto. Tu comentario es muy valioso para nosotros.",
+    "contacto.nombre": "Nombre",
+    "contacto.email": "E-mail",
+    "contacto.asunto": "Asunto",
+    "contacto.mens": "Mensaje",
+    "boton.enviar": "Enviar",
+    "boton.saber": "Quiero saber más"
 }

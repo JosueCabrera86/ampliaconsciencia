@@ -135,7 +135,8 @@ function BiografiaHumana() {
 
                             <Link to="/contacto">
                                 <button className="border my-6 px-4 py-4 rounded-md cursor-pointer text-white bg-red-900">
-                                    Quiero saber más
+                                    <FormattedMessage id="boton.saber" defaultMessage="Quiero saber más" />
+
                                 </button>
                             </Link>
                         </div>

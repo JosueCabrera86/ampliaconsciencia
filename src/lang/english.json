@@ -52,5 +52,11 @@
     "biografia.faq4.pregunta": "4. Can it be done online?",
     "biografia.faq4.respuesta": "Yes, sessions are usually done online but it can also be in person.",
     "contacto": "Contact",
-    "contacto.mensaje": "We are here for you.\n If you have any questions or comments, if you need more information about any of our activities, if you'd like to schedule an appointment, or if you'd like to leave us a review of your experience, don't hesitate to get in touch. What you have to say is very valuable to us."
+    "contacto.mensaje": "We are here for you.\n If you have any questions or comments, if you need more information about any of our activities, if you'd like to schedule an appointment, or if you'd like to leave us a review of your experience, don't hesitate to get in touch. What you have to say is very valuable to us.",
+    "contacto.nombre": "Name",
+    "contacto.email": "E-mail",
+    "contacto.asunto": "Subject",
+    "contacto.mens": "Message",
+    "boton.enviar": "Send",
+    "boton.saber": "Learn More"
 }

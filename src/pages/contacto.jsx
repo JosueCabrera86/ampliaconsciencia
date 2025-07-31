@@ -107,7 +107,7 @@ function Contacto() {
                         className="md:w-1/2 flex flex-col space-y-4 text-base text-black max-w-xl mx-auto md:mx-0"
                     >
                         <label className="flex flex-col">
-                            <span>Nombre</span>
+                            <span><FormattedMessage id="contacto.nombre" defaultMessage="Nombre" /></span>
                             <input
                                 type="text"
                                 name="nombre"
@@ -119,7 +119,7 @@ function Contacto() {
                         </label>
 
                         <label className="flex flex-col">
-                            <span>Email</span>
+                            <span><FormattedMessage id="contacto.email" defaultMessage="E-mail" /></span>
                             <input
                                 type="email"
                                 name="email"
@@ -131,7 +131,7 @@ function Contacto() {
                         </label>
 
                         <label className="flex flex-col">
-                            <span>Asunto</span>
+                            <span><FormattedMessage id="contacto.asunto" defaultMessage="Asunto" /></span>
                             <input
                                 type="text"
                                 name="asunto"
@@ -143,7 +143,7 @@ function Contacto() {
                         </label>
 
                         <label className="flex flex-col">
-                            <span>Mensaje</span>
+                            <span><FormattedMessage id="contacto.mens" defaultMessage="Mensaje" /></span>
                             <textarea
                                 name="mensaje"
                                 value={formData.mensaje}
@@ -165,7 +165,7 @@ function Contacto() {
                             type="submit"
                             className="bg-red-900 text-white font-bold border border-red-900 px-6 py-3 rounded-md hover:scale-105 transition-transform w-full md:w-auto self-center"
                         >
-                            Enviar
+                            <FormattedMessage id="boton.enviar" defaultMessage="Enviar" />
                         </button>
                     </form>
                 </div>

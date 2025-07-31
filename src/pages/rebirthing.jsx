@@ -25,8 +25,7 @@ function Rebirthing() {
 
     return (
         <div className="w-full overflow-x-hidden">
-            {/* Portada */}
-            {/* Portada */}
+
             <div className="relative -mt-6 w-full">
                 {/* Contenedor con proporción 16:9 */}
                 <div className="w-full aspect-[16/9] md:aspect-[21/9]">
@@ -156,7 +155,7 @@ function Rebirthing() {
 
                             <Link to="/contacto">
                                 <button className="border my-6 px-6 py-4 rounded-md cursor-pointer text-white bg-red-900 hover:bg-red-800 transition-colors duration-300">
-                                    Quiero saber más
+                                    <FormattedMessage id="boton.saber" defaultMessage="Quiero saber más" />
                                 </button>
                             </Link>
                         </div>
