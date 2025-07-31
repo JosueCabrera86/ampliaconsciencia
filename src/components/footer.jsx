@@ -30,7 +30,7 @@ function Footer() {
                 </a>
 
             </div>
-            <div className="flex justify-center  bg-red-900 text-white text-xl mt-4 ">
+            <div className="flex justify-center  bg-red-900 text-white text-lg mt-4 ">
                 <p>
                     &copy; {new Date().getFullYear()} Rebirthing. Todos
                     los derechos reservados.
