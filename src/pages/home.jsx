@@ -44,7 +44,7 @@ function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-                <Link to="/rebirthing" className="flex flex-col items-center group cursor-pointer">
+                <Link to="/rebirthingbreathwork" className="flex flex-col items-center group cursor-pointer">
                     <div className="w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300">
                         <img
                             src="./imagenes/home/pris.PNG"
@@ -57,7 +57,7 @@ function Home() {
                     </h2>
                 </Link>
 
-                <Link to="/biografia" className="flex flex-col items-center group cursor-pointer">
+                <Link to="/biografiahumana" className="flex flex-col items-center group cursor-pointer">
                     <div className="w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300">
                         <img
                             src="./imagenes/home/biografia.jpg"
