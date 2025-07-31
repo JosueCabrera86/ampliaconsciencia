@@ -31,10 +31,11 @@ function Footer() {
 
             </div>
             <div className="flex justify-center  bg-red-900 text-white text-lg mt-4 ">
-                <p>
-                    &copy; {new Date().getFullYear()} Rebirthing. Todos
-                    los derechos reservados.
+                <p className="text-center px-4">
+                    &copy; {new Date().getFullYear()} Amplia Consciencia.
+                    <span className="block sm:inline"> Todos los derechos reservados.</span>
                 </p>
+
             </div>
         </div>
     );

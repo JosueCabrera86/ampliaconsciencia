@@ -36,10 +36,10 @@ function Navbar() {
                             <Link to="/" onClick={cerrarMenu}>
                                 <FormattedMessage id="navbar.home" defaultMessage="Inicio" />
                             </Link>
-                            <Link to="/rebirthing" onClick={cerrarMenu}>
+                            <Link to="/rebirthingbreathwork" onClick={cerrarMenu}>
                                 <FormattedMessage id="navbar.rebirthing" defaultMessage="Rebirthing Breathwork" />
                             </Link>
-                            <Link to="/biografia" onClick={cerrarMenu}>
+                            <Link to="/biografiahumana" onClick={cerrarMenu}>
                                 <FormattedMessage id="navbar.biografia" defaultMessage="Biografía Humana" />
                             </Link>
                             <Link to="/contacto" onClick={cerrarMenu}>

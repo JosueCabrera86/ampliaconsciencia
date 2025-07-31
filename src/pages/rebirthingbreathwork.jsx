@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaWind } from 'react-icons/fa';
+import { FaCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { FormattedMessage, useIntl } from 'react-intl';
 
@@ -96,7 +96,7 @@ function Rebirthing() {
                 <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                     <FormattedMessage id="rebirthing.cómo" defaultMessage="¿CÓMO SE PRACTICA EL REBIRTHING?" />
                 </h2>
-                <p className="text-base sm:text-lg italic leading-relaxed whitespace-pre-line">
+                <p className="text-base sm:text-lg italic text-justify leading-relaxed whitespace-pre-line">
                     <FormattedMessage
                         id="rebirthing.practica"
                         defaultMessage={`El encuentro inicia con una conversación compartida. El facilitador cuenta sobre la práctica, el consultante abre su historia y sus desafíos actuales, aquello que lo convoca.\nLuego sigue la sesión de respiración. En este caso el trabajo lo realiza el consultante guiado por la energía vital del aire. El facilitador cuida que la respiración se sostenga y acompaña a que el consultante ingrese en la experiencia y atraviese la liberación emocional.\nPor último, se busca integrar las experiencias vivenciadas en un compartir final.\nEn el caso de hacer un proceso de varias sesiones, el facilitador va ofreciendo una serie de propuestas o ejercicios para hacer entre sesiones.`}
@@ -132,24 +132,33 @@ function Rebirthing() {
                                     </button>
 
                                     {openIndex === index && (
-                                        <ul
-                                            id={`faq-answer-${index}`}
-                                            className="mt-3 space-y-2 text-gray-700"
-                                        >
-                                            {intl
-                                                .formatMessage({ id: faq.respuestaId, defaultMessage: '' })
-                                                .split('\n')
-                                                .map((linea, idx) => (
-                                                    <li
-                                                        key={idx}
-                                                        className="flex items-center gap-2"
-                                                    >
-                                                        <FaWind size={18} className="text-black-400 mt-1" />
-                                                        <span>{linea}</span>
-                                                    </li>
-                                                ))}
-                                        </ul>
+                                        <>
+                                            {index === 0 || index === 1 ? (
+                                                <ul
+                                                    id={`faq-answer-${index}`}
+                                                    className="mt-3 space-y-2 text-gray-700"
+                                                >
+                                                    {intl
+                                                        .formatMessage({ id: faq.respuestaId, defaultMessage: '' })
+                                                        .split('\n')
+                                                        .map((linea, idx) => (
+                                                            <li key={idx} className="flex items-start gap-2">
+                                                                <FaCircle size={6} className="text-gray-700 mt-1 flex-shrink-0" />
+                                                                <span>{linea}</span>
+                                                            </li>
+                                                        ))}
+                                                </ul>
+                                            ) : (
+                                                <p
+                                                    id={`faq-answer-${index}`}
+                                                    className="mt-3 text-gray-700 text-justify whitespace-pre-line"
+                                                >
+                                                    <FormattedMessage id={faq.respuestaId} defaultMessage="" />
+                                                </p>
+                                            )}
+                                        </>
                                     )}
+
                                 </div>
                             ))}
 

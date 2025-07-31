@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaWind } from 'react-icons/fa';
+import { FaCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { FormattedMessage, useIntl } from 'react-intl';
 
@@ -50,10 +50,10 @@ function BiografiaHumana() {
 
             {/* Contenido */}
             <div className="container mx-auto my-8 px-4 text-center ">
-                <h2 className="text-4xl font-bold mb-4">
+                <h2 className="text-4xl font-bold mb-4 text-center">
                     <FormattedMessage id="biografia.que" defaultMessage="¿QUÉ ES LA BIOGRAFÍA HUMANA?" />
                 </h2>
-                <p className="text-xl italic leading-relaxed whitespace-pre-line max-w-4xl mx-auto">
+                <p className="text-xl italic text-justify leading-relaxed whitespace-pre-line max-w-4xl mx-auto">
                     <FormattedMessage
                         id="biografia.definicion"
                         defaultMessage="La propuesta de la Biografía Humana es salir de nuestra visión acotada, para revisar la totalidad de nuestra vida desde una mirada ampliada.\nEn este recorrido, inicialmente se coloca una base en las necesidades emocionales y fisiológicas naturales de la criatura humana. A partir de eso, se propone una terapia conversacional que busca revisar las vivencias atravesadas desde nuestra primera infancia y contrastar lo atravesado, con esta base."
@@ -85,7 +85,7 @@ function BiografiaHumana() {
                 <h2 className="text-4xl font-bold mb-4">
                     <FormattedMessage id="biografia.cómo" defaultMessage="¿CÓMO SE PRACTICA LA BIOGRAFÍA HUMANA?" />
                 </h2>
-                <p className="text-xl italic leading-relaxed whitespace-pre-line max-w-4xl mx-auto">
+                <p className="text-xl italic text-justify leading-relaxed whitespace-pre-line max-w-4xl mx-auto">
                     <FormattedMessage
                         id="biografia.practica"
                         defaultMessage='Esta práctica se realiza en sesiones individuales, periódicas y de manera online.\nDurante las primeras sesiones se propone un recorrido por la historia personal, con una mirada objetiva y ampliada de los sucesos atravesados, revisando discursos y paradigmas engañados.\nSe intenta describir los rasgos del escenario de infancia a través de una imagen metafórica que resume las características principales del lugar de donde venimos. \nLuego nos enfocamos en ir detectando las características y pulsos que hemos desarrollado para poder navegar dicho escenario, que nos sirvieron para conseguir el alimento emocional básico. Estas características se intentan resumir en una segunda imagen del personaje o traje que nos hemos puesto inconscientemente.\nIntentamos ir desanudando qué beneficios y desventajas tienen estos arraigados rasgos inconscientes de nuestra personalidad. Cómo benefician o perjudican nuestro propio desarrollo y a las personas de nuestro entorno. Esta mirada ampliada nos brinda la posibilidad de elegir decisiones diferentes a las que automáticamente tomamos día a día.\nPor último se plantea un propósito de vida, con posibilidades diferentes a las habituales, se intenta ir entrenando cambios de rumbo para ir alineándose poco a poco con nuestro ser esencial auténtico.'
@@ -99,7 +99,7 @@ function BiografiaHumana() {
                         <img
                             src="./imagenes/3.jpg"
                             alt="faq rebirthing"
-                            className="mx-auto rounded-xl shadow-lg w-[700px]"
+                            className="mx-auto rounded-xl shadow-lg w-[700px] mt-8"
                         />
                     </div>
 
@@ -118,18 +118,33 @@ function BiografiaHumana() {
                                     </button>
 
                                     {openIndex === index && (
-                                        <ul className="mt-3 space-y-2 text-gray-700">
-                                            {intl
-                                                .formatMessage({ id: faq.respuestaId, defaultMessage: '' })
-                                                .split('\n')
-                                                .map((linea, idx) => (
-                                                    <li key={idx} className="flex items-center gap-2">
-                                                        <FaWind size={18} className="text-black-400 mt-1" />
-                                                        <span>{linea}</span>
-                                                    </li>
-                                                ))}
-                                        </ul>
+                                        <>
+                                            {index === 1 ? (
+                                                <ul
+                                                    id={`faq-answer-${index}`}
+                                                    className="mt-3 space-y-2 text-gray-700"
+                                                >
+                                                    {intl
+                                                        .formatMessage({ id: faq.respuestaId, defaultMessage: '' })
+                                                        .split('\n')
+                                                        .map((linea, idx) => (
+                                                            <li key={idx} className="flex items-start gap-2">
+                                                                <FaCircle size={6} className="text-gray-700 mt-1 flex-shrink-0" />
+                                                                <span>{linea}</span>
+                                                            </li>
+                                                        ))}
+                                                </ul>
+                                            ) : (
+                                                <p
+                                                    id={`faq-answer-${index}`}
+                                                    className="mt-3 text-gray-700 text-justify whitespace-pre-line"
+                                                >
+                                                    <FormattedMessage id={faq.respuestaId} defaultMessage="" />
+                                                </p>
+                                            )}
+                                        </>
                                     )}
+
                                 </div>
                             ))}
 
